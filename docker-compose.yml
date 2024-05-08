@@ -1,0 +1,34 @@
+version: '3.8'
+
+name: ecommerce
+
+services:
+  ecommerce:
+    container_name: ecommerce
+    networks:
+      - networkEcommerce
+    build:
+      target: production
+      context: .
+      args:
+        - PORT="3001"
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "512m"
+        reservations:
+          cpus: "0.25"
+          memory: "256m"
+
+networks:
+  networkEcommerce:
+    name: networkEcommerce
+    driver: bridge
+
+volumes:
+  node_modules:
