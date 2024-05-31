@@ -21,6 +21,6 @@ spec:
             - name: NODE_ENV
               value: production
             - name: NEXT_PUBLIC_API_URL
-              value: "http://172.171.173.163:3000/api/74ded8ec-77d1-4390-bd27-36c7db2de037"
+              value: "http://172.171.173.163:3000/api/f04e501d-78e7-4e2b-8d1a-055d8c001c05"
             - name: REACT_EDITOR
               value: "atom"
