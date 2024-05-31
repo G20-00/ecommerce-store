@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: gecommercestore 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gecommercestore
+  template:
+    metadata:
+      labels:
+        app: gecommercestore 
+    spec:
+      containers:
+        - name: gecommercestore 
+          image: crecommerceauto.azurecr.io/gecommercestore
+          ports:
+          - containerPort: 3001
