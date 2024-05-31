@@ -13,8 +13,8 @@ RUN echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$DIR/.npmrc" && \
   npm install --frozen-lockfile && \
   rm -f .npmrc
 
-RUN npm run build && \
-  npm prune --prod --config.ignore-scripts=true
+RUN npm run build
+RUN npm prune --prod --config.ignore-scripts=true
 
 FROM base AS production
 
